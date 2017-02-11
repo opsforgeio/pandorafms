@@ -49,7 +49,8 @@ RUN yum install -y \
 	php-zip \
 	nmap \
 	net-snmp-utils \
-	xprobe2
+	xprobe2; \
+  yum clean all
 
 #Clone the repo
 RUN git clone -b develop https://github.com/pandorafms/pandorafms.git /tmp/pandorafms

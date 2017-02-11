@@ -52,7 +52,8 @@ RUN yum install -y \
 	perl-XML-Twig \
 	perl-Encode-Locale \
 	net-snmp \
-	net-snmp-utils
+	net-snmp-utils; \
+  yum clean all
 
 
 #Clone the repo
