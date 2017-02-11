@@ -1,7 +1,5 @@
 FROM debian:jessie
 
-SHELL ["/bin/bash", "-c"]
-
 MAINTAINER opsforge.io
 LABEL name="pandorafms_mysql" \
       version="6.0.0"
