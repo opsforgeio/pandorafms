@@ -1,5 +1,8 @@
 FROM centos:centos6
-MAINTAINER Pandora FMS Team <info@pandorafms.com>
+MAINTAINER opsforge.io
+
+LABEL name="pandorafms_console" \
+      version="6.0.0"
 
 RUN { \
 	echo '[EPEL]'; \
@@ -18,7 +21,7 @@ RUN { \
 } > /etc/yum.repos.d/pandorafms.repo
 
 RUN yum -y update; yum clean all;
-RUN yum install -y \ 
+RUN yum install -y \
 	git \
 	httpd \
 	cronie \
@@ -31,19 +34,19 @@ RUN yum install -y \
 	openldap \
 	plymouth \
 	xterm \
-	php \ 
-	php-gd \ 
-	graphviz \ 
-	php-mysql \ 
-	php-pear-DB \ 
+	php \
+	php-gd \
+	graphviz \
+	php-mysql \
+	php-pear-DB \
 	php-pear \
 	php-pdo \
-	php-mbstring \ 
-	php-ldap \ 
-	php-snmp \ 
-	php-ldap \ 
-	php-common \ 
-	php-zip \ 
+	php-mbstring \
+	php-ldap \
+	php-snmp \
+	php-ldap \
+	php-common \
+	php-zip \
 	nmap \
 	net-snmp-utils \
 	xprobe2
@@ -59,4 +62,3 @@ ADD docker_entrypoint.sh /entrypoint.sh
 RUN chmod -v +x /entrypoint.sh
 
 CMD ["/entrypoint.sh"]
-

@@ -1,5 +1,8 @@
 FROM centos:centos6
-MAINTAINER Pandora FMS Team <info@pandorafms.com>
+MAINTAINER opsforge.io
+
+LABEL name="pandorafms_server" \
+      version="6.0.0"
 
 RUN { \
 	echo '[EPEL]'; \
@@ -18,7 +21,7 @@ RUN { \
 } > /etc/yum.repos.d/pandorafms.repo
 
 RUN yum -y update; yum clean all;
-RUN yum install -y \ 
+RUN yum install -y \
 	git \
 	cronie \
 	ntp \
@@ -27,33 +30,33 @@ RUN yum install -y \
 	xterm \
 	postfix \
 	wmic \
-	perl-HTML-Tree \ 
-	perl-DBI \ 
-	perl-DBD-mysql \ 
-	perl-libwww-perl \ 
-	perl-XML-Simple \ 
-	perl-XML-SAX \ 
-	perl-NetAddr-IP \ 
-	net-snmp \ 
-	net-tools \ 
-	perl-IO-Socket-INET6 \ 
-	perl-Socket6 \ 
-	nmap \ 
-	sudo \ 
-	xprobe2 \ 
-	make \ 
-	perl-CPAN \ 
-	perl-JSON \ 
-	net-snmp-perl \ 
-	perl-Time-HiRes \ 
-	perl-XML-Twig \ 
+	perl-HTML-Tree \
+	perl-DBI \
+	perl-DBD-mysql \
+	perl-libwww-perl \
+	perl-XML-Simple \
+	perl-XML-SAX \
+	perl-NetAddr-IP \
+	net-snmp \
+	net-tools \
+	perl-IO-Socket-INET6 \
+	perl-Socket6 \
+	nmap \
+	sudo \
+	xprobe2 \
+	make \
+	perl-CPAN \
+	perl-JSON \
+	net-snmp-perl \
+	perl-Time-HiRes \
+	perl-XML-Twig \
 	perl-Encode-Locale \
 	net-snmp \
 	net-snmp-utils
-	
+
 
 #Clone the repo
-RUN git clone -b develop https://github.com/pandorafms/pandorafms.git /tmp/pandorafms
+RUN git clone -b develop git@github.com:opsforgeio/pandorafms.git /tmp/pandorafms
 
 #Exposing ports for: Tentacle protocol
 EXPOSE 41121
@@ -63,4 +66,3 @@ ADD docker_entrypoint.sh /entrypoint.sh
 RUN chmod -v +x /entrypoint.sh
 
 CMD ["/entrypoint.sh"]
-

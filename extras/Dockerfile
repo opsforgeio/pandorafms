@@ -1,5 +1,9 @@
 FROM debian:jessie
 
+MAINTAINER opsforge.io
+LABEL name="pandorafms_mysql" \
+      version="6.0.0"
+
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
 
