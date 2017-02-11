@@ -57,7 +57,7 @@ RUN yum install -y \
 
 
 #Clone the repo
-RUN git clone -b develop git@github.com:opsforgeio/pandorafms.git /tmp/pandorafms
+RUN git clone -b develop https://github.com/opsforgeio/pandorafms.git /tmp/pandorafms
 
 #Exposing ports for: Tentacle protocol
 EXPOSE 41121
