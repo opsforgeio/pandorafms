@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/pandorafms/pandorafms.svg?branch=develop)](https://travis-ci.org/pandorafms/pandorafms)
+[ ![Codeship Status for opsforgeio/pandorafms](https://app.codeship.com/projects/7f9ca530-d2b9-0134-8e95-1e7634807a2c/status?branch=develop)](https://app.codeship.com/projects/201820)
 
 [![Pandora logo](http://wolf359.artica.es/public_images/logo_pandora_community.png)](http://pandorafms.org)
 
