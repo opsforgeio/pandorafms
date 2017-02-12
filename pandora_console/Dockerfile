@@ -53,7 +53,7 @@ RUN yum install -y \
   yum clean all
 
 #Clone the repo
-RUN git clone -b develop https://github.com/pandorafms/pandorafms.git /tmp/pandorafms
+RUN git clone -b pandora_6.0 https://github.com/pandorafms/pandorafms.git /tmp/pandorafms
 
 #Exposing ports for: HTTP, SNMP Traps, Anytermd (SSH), Anytermd (Telnet), Tentacle protocol
 EXPOSE 80 162/udp 8022 8023 41121
