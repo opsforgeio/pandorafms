@@ -36,7 +36,7 @@ if [ -z "$PANDORA_DB_PASSWORD" ]; then
 fi
 
 #Create the pandora user to run the anyterd, mainly
-/usr/sbin/useradd -d /home/pandora -s /bin/false -M -g 0 pandora
+/usr/bin/id -u pandora &>/dev/null || /usr/sbin/useradd -d /home/pandora -s /bin/false -M -g 0 pandora
 
 cd /tmp/pandorafms/pandora_server && chmod +x pandora_server_installer && sync && ./pandora_server_installer --install
 
